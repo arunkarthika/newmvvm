@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
+            app:startDestination="@id/mainfargment">
+
+    <fragment android:id="@+id/mainfargment" android:name="com.newmvvm.Navigation.Mainfargment"
+              android:label="fragment_mainfargment" tools:layout="@layout/fragment_mainfargment">
+        <action android:id="@+id/settingfra" app:destination="@id/settings"
+        />
+        <action android:id="@+id/action_mainfargment_to_account" app:destination="@id/account"
+                app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+        <action android:id="@+id/action_mainfargment_to_settings" app:destination="@id/settings"/>
+        <action android:id="@+id/action_mainfargment_to_account2" app:destination="@id/account"
+                app:launchSingleTop="false"/>
+    </fragment>
+    <fragment android:id="@+id/settings" android:label="fragment_settings"
+              tools:layout="@layout/fragment_settings" android:name="com.newmvvm.Navigation.settings"/>
+    <fragment android:id="@+id/account" android:name="com.newmvvm.Navigation.account"
+              android:label="fragment_account"
+              tools:layout="@layout/fragment_account"/>
+</navigation>

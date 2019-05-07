@@ -5,6 +5,8 @@ import android.arch.lifecycle.ViewModel
 import com.newmvvm.model.Hero
 import android.arch.lifecycle.LiveData
 import android.util.Log
+import android.widget.Toast
+import com.newmvvm.successs
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -15,8 +17,14 @@ import retrofit2.Retrofit
 
 
 
-class HeroesViewModel : ViewModel() {
+class HeroesViewModel : ViewModel(),successs.prese {
+
+
+
     private var heroList: MutableLiveData<List<Hero>>? = null
+    var successs: successs? = null
+
+
 
 
     fun getHeroes(): LiveData<List<Hero>> {
@@ -44,13 +52,12 @@ class HeroesViewModel : ViewModel() {
 
         call.enqueue(object : Callback<List<Hero>> {
             override fun onResponse(call: Call<List<Hero>>, response: Response<List<Hero>>) {
-
                 //finally we are setting the list to our MutableLiveData
                 heroList!!.setValue(response.body())
             }
-
             override fun onFailure(call: Call<List<Hero>>, t: Throwable) {
                 Log.d("error", t.toString())
+
             }
         })
     }

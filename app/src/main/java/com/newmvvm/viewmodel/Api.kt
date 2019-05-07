@@ -14,8 +14,4 @@ companion object{
 }
     @GET("marvel")
     fun getHeroes(): Call<List<Hero>>
-
-
-
-
 }

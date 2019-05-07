@@ -1,4 +1,4 @@
-package com.newmvvm;
+package com.newmvvm.Adapter;
 
 
 
@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.newmvvm.R;
 import com.newmvvm.model.Hero;
 
 import java.util.List;
@@ -24,6 +25,8 @@ public class HeroesAdapter extends RecyclerView.Adapter<HeroesAdapter.HeroViewHo
     public HeroesAdapter(Context mCtx, List<Hero> heroList) {
         this.mCtx = mCtx;
         this.heroList = heroList;
+
+
     }
 
     @NonNull
